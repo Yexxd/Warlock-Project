@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27e9f632aae50741b3d31bf6bed5f05, type: 3}
+  m_Name: Fireball
+  m_EditorClassIdentifier: 
+  spellName: Fireball
+  hotkey: q
+  CDBase: 2
+  pasive: 0
+  icon: {fileID: 21300000, guid: db59b51ed4a3a7841b4182339e92e60a, type: 3}
+  cursor: {fileID: 2800000, guid: dd02d3cd2bc2c9249ad6d9336fe1dcc3, type: 3}
+  script: {fileID: 11500000, guid: 6a54baf5804be37489f552a9f9dba85f, type: 3}
