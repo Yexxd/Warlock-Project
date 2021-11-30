@@ -12,7 +12,6 @@ public class SpellData : ScriptableObject
     public float CDBase;
     public bool pasive;
     public Sprite icon;
-    public Texture2D cursor;
     public TextAsset script;
 }
 

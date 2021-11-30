@@ -13,7 +13,8 @@ public class ConexMgr : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        PhotonNetwork.DestroyAll();
+        Texture2D cursor = Resources.Load("NormalCursor") as Texture2D;
+        Cursor.SetCursor(cursor, Vector3.zero, CursorMode.Auto);
     }
 
     public void Connect2Master()

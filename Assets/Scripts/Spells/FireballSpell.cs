@@ -6,9 +6,9 @@ using Photon.Pun;
 
 public class FireballSpell : Spell
 {
-    public GameObject prefab;
+    GameObject prefab;
 
-    private void Awake()
+    private void OnEnable()
     {
         prefab = Resources.Load("FireBall") as GameObject;
     }
@@ -17,13 +17,15 @@ public class FireballSpell : Spell
     {
         base.SpellBehavior();
         MouseRoutines.Screen2Plane(out Vector3 point);
-        Fire(transform.position, point - transform.position);
+        Fire(caster.position, point);
     }
 
-    public void Fire(Vector3 position, Vector3 direction)
+    public void Fire(Vector3 position, Vector3 point)
     {
-        direction.y = 0;
-        object[] initData = {direction.normalized * 10};
-        PhotonNetwork.Instantiate(prefab.name, position, Quaternion.identity,0, initData);
+        caster.SendMessage("LookTo", point);
+        caster.GetComponentInChildren<Animator>().SetTrigger("Fireball");
+        position.y = 1;
+        point.y = 1;
+        PhotonNetwork.Instantiate(prefab.name, position, Quaternion.LookRotation(point - position));
     }
 }

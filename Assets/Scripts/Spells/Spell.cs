@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
 
 public class Spell : MonoBehaviour
 {
     public string hotKey;
     public float CDBase;
     public Image cdIcon;
-    protected float cdActual;
-    protected PhotonView view;
-
-    private void OnEnable()
-    {
-        view = GetComponent<PhotonView>();
-    }
+    protected float cdActual = 0;
+    public Transform caster;
 
 
     protected virtual void Update()
     {
-        if (view.IsMine & Input.GetKeyDown(hotKey))
+        if (Input.GetKeyDown(hotKey))
             if (cdActual == 0)
                 SpellBehavior();
     }

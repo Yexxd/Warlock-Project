@@ -48,6 +48,11 @@ MonoBehaviour:
   - RestartRound
   - InmolateExplosion
   - Destruir
+  - MoveTo
+  - Stop
+  - SyncPosVel
+  - Call2Destroy
+  - RoundEnd
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
