@@ -53,6 +53,10 @@ public class RoomMgr : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        PhotonNetwork.LoadLevel("Mapa1");
+        /*
+        if(Application.platform != RuntimePlatform.Android)
+            PhotonNetwork.LoadLevel("Mapa1");
+        else*/
+            PhotonNetwork.LoadLevel("Mapa1_Android");
     }
 }

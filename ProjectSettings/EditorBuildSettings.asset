@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderBoardScene.unity
     guid: b677752c98414bc44a06cb06a74d7c79
+  - enabled: 1
+    path: Assets/Scenes/Mapa1_Android.unity
+    guid: 8cfe9acda8eeb0742a140e51362f119b
   m_configObjects: {}

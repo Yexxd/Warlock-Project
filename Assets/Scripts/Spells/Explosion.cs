@@ -27,7 +27,7 @@ public class Explosion : MonoBehaviour
             float d = 4 - Vector3.Distance(other.transform.position, transform.position);
 
             other.SendMessage("GotHit", d * (other.transform.position - transform.position));
-            other.SendMessage("TakeDMG",new Damage(15, GetComponent<PhotonView>().Owner));
+            other.SendMessage("TakeDMG",new Damage(25, GetComponent<PhotonView>().Owner));
         }
     }
 }

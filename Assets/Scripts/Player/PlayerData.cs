@@ -30,7 +30,10 @@ public class PlayerData : MonoBehaviour
     public static void PlayerCreated(WarlockPlayer p)
     {
         player = p;
-        single.GiveSpells();
+        /*
+        if(Application.platform != RuntimePlatform.Android)
+            single.GiveSpells();
+        */
     }
 
     public void GiveSpells()

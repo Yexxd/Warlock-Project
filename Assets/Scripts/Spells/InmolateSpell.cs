@@ -14,6 +14,7 @@ public class InmolateSpell : Spell
 
     public override void SpellBehavior()
     {
+        caster = PlayerData.player.transform;
         PhotonNetwork.Instantiate(prefab.name, caster.position, Quaternion.identity);
         caster.SendMessage("Stop");
         caster.SendMessage("SetMov",false);

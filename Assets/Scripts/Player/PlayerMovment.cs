@@ -18,6 +18,8 @@ public class PlayerMovment : MonoBehaviourPun
 
         targetPoint = transform.position;
         w = GetComponent<WarlockPlayer>();
+        if(Application.platform == RuntimePlatform.Android)
+            Destroy(this);
     }
 
     void Update()

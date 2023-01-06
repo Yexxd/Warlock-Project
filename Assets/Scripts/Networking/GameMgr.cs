@@ -14,7 +14,6 @@ public class GameMgr : MonoBehaviourPunCallbacks
     {
         int i = 0;
         if(PhotonNetwork.IsMasterClient)
-
             foreach (Player p in PhotonNetwork.PlayerList)
             {
                 photonView.RPC(nameof(CrearPlayer), p, i);

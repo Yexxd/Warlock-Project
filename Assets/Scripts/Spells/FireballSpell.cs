@@ -22,10 +22,15 @@ public class FireballSpell : Spell
 
     public void Fire(Vector3 position, Vector3 point)
     {
-        caster.SendMessage("LookTo", point);
-        caster.GetComponentInChildren<Animator>().SetTrigger("Fireball");
-        position.y = 1;
-        point.y = 1;
-        PhotonNetwork.Instantiate(prefab.name, position, Quaternion.LookRotation(point - position));
+        if (cdActual == 0)
+        {
+            base.StartCD();
+            caster = PlayerData.player.transform;
+            caster.SendMessage("LookTo", point);
+            caster.GetComponentInChildren<Animator>().SetTrigger("Fireball");
+            position.y = 1;
+            point.y = 1;
+            PhotonNetwork.Instantiate(prefab.name, position, Quaternion.LookRotation(point - position));
+        }
     }
 }
